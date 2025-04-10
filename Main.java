@@ -16,6 +16,8 @@ public class Main {
         system.dodajKlienta(klient1);
         system.dodajKlienta(klient2);
         system.dodajKlienta(klient3);
+        System.out.println("TEST: " + system.znajdzKlienta("Bogucki"));
+
 
         //System.out.println("----------------test-----przed-------------");
         System.out.println("Dostępne miejsca przed rezerwacjami:");
@@ -50,7 +52,9 @@ public class Main {
 
 //zmiana ceny
         System.out.println("\nZmiana ceny koncertu z " + koncertRef.getCena() + " na 150.0 zł");
+        system.zmienCeneWydarzenia("koncert", 150); // nie dziala?
         koncertRef.setCena(150.0);
+
 //znowu pokaz rezerwacje
         System.out.println("\nRezerwacje klienta " + klient1.getImie() + " po zmianie ceny:");
         klient1.wyswietlRezerwacje();

@@ -10,7 +10,7 @@ public class Wydarzenie {
 
 
     public Wydarzenie(String nazwa, double cena) {
-        this(nazwa, cena, "Brak daty", "Brak miejsca");
+        this(nazwa, cena, "Dzisiaj", "Warszawa");
     }
 
     public Wydarzenie(String nazwa, double cena, String data, String miejsce) {
@@ -58,6 +58,6 @@ public class Wydarzenie {
 
     @Override
     public String toString() {
-        return nazwa + " | " + data + " | " + miejsce + " | Cena: " + cena + "zł | Dostępne miejsca: " + dostepneMiejsca;
+        return nazwa + " | " + data + " | " + miejsce + " | Cena: " + cena + "zł";
     }
 }

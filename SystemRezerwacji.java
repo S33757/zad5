@@ -33,7 +33,7 @@ public class SystemRezerwacji {
         }
         return null;
     }
-
+//dziala?
     public Klient znajdzKlienta(String nazwisko) {
         for (Klient k : klienci) {
             if (k.getNazwisko().equalsIgnoreCase(nazwisko)) {
@@ -42,7 +42,7 @@ public class SystemRezerwacji {
         }
         return null;
     }
-
+// nie dziala?
     public void zmienCeneWydarzenia(String nazwa, double nowaCena) {
         Wydarzenie wydarzenie = znajdzWydarzenie(nazwa);
         if (wydarzenie != null) {
@@ -51,7 +51,7 @@ public class SystemRezerwacji {
     }
 
     public void wyswietlDostepnoscMiejsc() {
-        System.out.println("Dostępność miejsc na wydarzeniach:");
+        System.out.println("Dostępność miejsc:");
         for (Wydarzenie w : wydarzenia) {
             System.out.println("- " + w.getNazwa() + ": " + w.getDostepneMiejsca() + " z " + w.getMaxLiczbaMiejsc());
         }

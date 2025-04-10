@@ -8,11 +8,6 @@ public class Klient {
     private String email;
     private ArrayList<Wydarzenie> listaRezerwacji;
 
-
-    public Klient(String imie, String nazwisko) {
-        this(imie, nazwisko, "brak@email.com");
-    }
-
     public Klient(String imie, String nazwisko, String email) {
         this.imie = imie;
         this.nazwisko = nazwisko;
