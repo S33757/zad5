@@ -37,7 +37,7 @@ public class Klient {
     public void anulujRezerwacje(Wydarzenie wydarzenie) {
         listaRezerwacji.remove(wydarzenie);
     }
-
+// nie dziala?
     public void anulujRezerwację(Wydarzenie wydarzenie) {
         if (listaRezerwacji.remove(wydarzenie)) {
             wydarzenie.anulujMiejsce();

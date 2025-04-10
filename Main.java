@@ -17,16 +17,19 @@ public class Main {
         system.dodajKlienta(klient2);
         system.dodajKlienta(klient3);
 
-        System.out.println("----------------test-----przed-------------");
+        //System.out.println("----------------test-----przed-------------");
+        System.out.println("Dostępne miejsca przed rezerwacjami:");
         system.wyswietlDostepnoscMiejsc();
 //rezerwacje
         system.dokonajRezerwacji(klient1, koncert); //koncert -1
+        system.dokonajRezerwacji(klient1, teatr); //teatr -1
         system.dokonajRezerwacji(klient2, koncert); //koncert -1
         system.dokonajRezerwacji(klient2, teatr); //teatr -1
         system.dokonajRezerwacji(klient3, koncert); //koncert -1
-        System.out.println("----------------test-----po rezerwacji-------------");
+        //System.out.println("----------------test-----po rezerwacji------------");
+        System.out.println("\nDostępne miejsca po rezerwacjach:");
         system.wyswietlDostepnoscMiejsc();
-// koncert -3, teatr -1
+// koncert -3, teatr -2
         System.out.println();
 //pokaz rezerwacje
         System.out.println("Rezerwacje klienta " + klient1.getImie() + " " + klient1.getNazwisko() + " " + klient1.getEmail() + ":");
@@ -57,14 +60,13 @@ public class Main {
 
         System.out.println("\nRezerwacje klienta " + klient3.getImie() + " po zmianie ceny:");
         klient3.wyswietlRezerwacje();
-// klient2 anuluje na TEATR (+1), pokaz rezerwacje
+// klient2 anuluje na TEATR (+1), pokaz rezerwacje  --- powinno byc: koncert 97 teatr 99
         System.out.println("\nKlient " + klient2.getImie() + " anuluje rezerwację na teatr:");
-        klient2.anulujRezerwacje(teatr);
+        klient2.anulujRezerwacje(teatr); // nie dziala?
+        teatr.anulujMiejsce();
         klient2.wyswietlRezerwacje();
-        System.out.println("----------------test--------ANULUJE----------");
+        //System.out.println("----------------test--------ANULUJE----------");
         system.wyswietlDostepnoscMiejsc();
 //dostepne miejsca
-        //System.out.println("\nDostępne miejsca na koncercie: " + koncert.getDostepneMiejsca() + " z " + koncert.getMaxLiczbaMiejsc());
-        system.wyswietlDostepnoscMiejsc();
     }
 }
