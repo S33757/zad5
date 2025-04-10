@@ -1,3 +1,5 @@
+package zad5;
+
 import java.util.ArrayList;
 
 public class Klient {
@@ -6,8 +8,9 @@ public class Klient {
     private String email;
     private ArrayList<Wydarzenie> listaRezerwacji;
 
-    public Klient(String imię, String nazwisko) {
-        this(imię, nazwisko, "brak@email.com");
+
+    public Klient(String imie, String nazwisko) {
+        this(imie, nazwisko, "brak@email.com");
     }
 
     public Klient(String imie, String nazwisko, String email) {
@@ -16,6 +19,7 @@ public class Klient {
         this.email = email;
         this.listaRezerwacji = new ArrayList<>();
     }
+
 
     public String getImie() { return imie; }
     public void setImie(String imie) { this.imie = imie; }
@@ -26,12 +30,18 @@ public class Klient {
     public String getEmail() { return email; }
     public void setEmail(String email) { this.email = email; }
 
-    public void dodajRezerwację(Wydarzenie wydarzenie) {
+    public void dodajRezerwacje(Wydarzenie wydarzenie) {
         listaRezerwacji.add(wydarzenie);
     }
 
     public void anulujRezerwacje(Wydarzenie wydarzenie) {
         listaRezerwacji.remove(wydarzenie);
+    }
+
+    public void anulujRezerwację(Wydarzenie wydarzenie) {
+        if (listaRezerwacji.remove(wydarzenie)) {
+            wydarzenie.anulujMiejsce();
+        }
     }
 
     public void wyswietlRezerwacje() {
@@ -43,4 +53,6 @@ public class Klient {
             }
         }
     }
+
+
 }

@@ -1,30 +1,27 @@
+package zad5;
+
 import java.util.ArrayList;
 
 public class SystemRezerwacji {
     private ArrayList<Wydarzenie> wydarzenia = new ArrayList<>();
     private ArrayList<Klient> klienci = new ArrayList<>();
 
+
     public void dodajWydarzenie(Wydarzenie wydarzenie) {
         wydarzenia.add(wydarzenie);
     }
 
-    public void dodajWydarzenie(String nazwa, double cena) {
-        wydarzenia.add(new Wydarzenie(nazwa, cena));
-    }
+
 
     public void dodajKlienta(Klient klient) {
         klienci.add(klient);
     }
 
-    public void dodajKlienta(String imie, String nazwisko) {
-        klienci.add(new Klient(imie, nazwisko));
-    }
-
     public void dokonajRezerwacji(Klient klient, Wydarzenie wydarzenie) {
         if (wydarzenie.zarezerwujMiejsce()) {
-            klient.dodajRezerwację(wydarzenie);
+            klient.dodajRezerwacje(wydarzenie);
         } else {
-            System.out.println("Brak dostpnych miejsc na wydarzenie: " + wydarzenie.getNazwa());
+            System.out.println("Brak dostępnych miejsc na wydarzenie: " + wydarzenie.getNazwa());
         }
     }
 
@@ -50,6 +47,13 @@ public class SystemRezerwacji {
         Wydarzenie wydarzenie = znajdzWydarzenie(nazwa);
         if (wydarzenie != null) {
             wydarzenie.setCena(nowaCena);
+        }
+    }
+
+    public void wyswietlDostepnoscMiejsc() {
+        System.out.println("Dostępność miejsc na wydarzeniach:");
+        for (Wydarzenie w : wydarzenia) {
+            System.out.println("- " + w.getNazwa() + ": " + w.getDostepneMiejsca() + " z " + w.getMaxLiczbaMiejsc());
         }
     }
 }

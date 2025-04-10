@@ -1,3 +1,5 @@
+package zad5;
+
 public class Wydarzenie {
     private String nazwa;
     private String data;
@@ -6,12 +8,9 @@ public class Wydarzenie {
     private int dostepneMiejsca;
     private double cena;
 
+
     public Wydarzenie(String nazwa, double cena) {
         this(nazwa, cena, "Brak daty", "Brak miejsca");
-    }
-
-    public Wydarzenie(String nazwa, double cena, String data) {
-        this(nazwa, cena, data, "Brak miejsca");
     }
 
     public Wydarzenie(String nazwa, double cena, String data, String miejsce) {
@@ -22,6 +21,7 @@ public class Wydarzenie {
         this.maxLiczbaMiejsc = 100;
         this.dostepneMiejsca = 100;
     }
+
 
     public String getNazwa() { return nazwa; }
     public void setNazwa(String nazwa) { this.nazwa = nazwa; }
@@ -49,8 +49,15 @@ public class Wydarzenie {
         return false;
     }
 
+    public void anulujMiejsce() {
+        if (dostepneMiejsca < maxLiczbaMiejsc) {
+            dostepneMiejsca++;
+        }
+    }
+
+
     @Override
     public String toString() {
-        return nazwa + " | " + data + " | " + miejsce + " | Cena: " + cena + " zł | Dostępne miejsca: " + dostepneMiejsca;
+        return nazwa + " | " + data + " | " + miejsce + " | Cena: " + cena + "zł | Dostępne miejsca: " + dostepneMiejsca;
     }
 }
